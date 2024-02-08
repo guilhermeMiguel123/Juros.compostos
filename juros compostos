@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Juros Compostos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 0 auto;
+            width: 300px;
+            
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora de Juros Compostos</h2>
+        <input type="number" id="principal" placeholder="Principal" min="0">
+        <input type="number" id="taxa" placeholder="Taxa de Juros (em %)" min="0" step="0.01">
+        <input type="number" id="tempo" placeholder="Tempo (em anos)" min="0">
+        <button onclick="calcular()">Calcular</button>
+        <div id="resultado"></div>
+    </div>
+    <script>
+        function calcular() {
+            var principal = document.getElementById('principal').value;
+            var taxa = document.getElementById('taxa').value;
+            var tempo = document.getElementById('tempo').value;
+            var montante = principal * Math.pow((1 + taxa / 100), tempo);
+            document.getElementById('resultado').innerHTML = 'Montante: ' + montante.toFixed(2);
+        }
+    </script>
+</body>
+</html>
