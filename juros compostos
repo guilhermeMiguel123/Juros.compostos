@@ -6,10 +6,30 @@
         body {
             margin-top: 200px;
             font-family: Arial, sans-serif;
-           
+            height: 200px;
+            width: 90%;
+            background-image: linear-gradient(90deg, rgba(0, 7, 22, 1), rgba(24, 20, 201, 1));
         }
 
-    
+        .box{
+            margin: auto;
+            width: 50%;
+            text-align: center;
+            border-radius: 8px;
+            border-radius: 10px;
+            background-color: #eeeeee;
+            border-bottom: 5px solid #cccccc;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333333;
+            background-color: #dddddd;
+            box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.4);
+
+        }
+
+       
         .container {
             margin: 0 auto;
             width: 400px;
@@ -21,6 +41,8 @@
             padding: 10px;
             margin: 30px 0;
             border-radius: 8px;
+            background-color: #eeeeee;
+            border-bottom: 5px solid #adadad;
         }
 
             button {
@@ -37,14 +59,13 @@
                 width: 423px;
                 height: 40px;
                 font-weight: bold;
-                border-bottom: 4px solid #179e43;
                 transition: 0.3s;
                 box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
-                background-color: #26bf59;
+                background-image: linear-gradient(90deg, rgba(255, 242, 58, 1), rgba(224, 162, 8, 1) 80%);
             }
 
             button:hover {
-                box-shadow: 0 0 rgba(0, 0, 0, 0.4);
+                box-shadow: 0 0 rgba(255, 59, 59, 0.4);
                 border-bottom-width: 2px;
                 transform: translateY(2px);
             }
@@ -59,14 +80,19 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Calculadora de Juros Compostos</h2>
-        <input type="number" id="principal" placeholder="Principal" min="0">
-        <input type="number" id="taxa" placeholder="Taxa de Juros (em %)" min="0" step="0.01">
-        <input type="number" id="tempo" placeholder="Tempo (em anos)" min="0">
-        <button onclick="calcular()">Calcular</button>
-        <div id="resultado"></div>
+
+    <div class="box">
+        <div class="container">
+            <h2>Calculadora de Juros Compostos</h2>
+            <input type="number" id="principal" placeholder="Principal" min="0">
+            <input type="number" id="taxa" placeholder="Taxa de Juros (em %)" min="0" step="0.01">
+            <input type="number" id="tempo" placeholder="Tempo (em anos)" min="0">
+            <button onclick="calcular()">Calcular</button>
+            <div id="resultado"></div>
+        </div>
     </div>
+
+
     <script>
         function calcular() {
             var principal = document.getElementById('principal').value;
